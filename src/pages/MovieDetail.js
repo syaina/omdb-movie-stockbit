@@ -38,11 +38,11 @@ export default function MovieDetail() {
 
     useEffect (() => {
         fetchAPI()
-    }, [])
+    }, [dispatch])
 
     return (
        <section className="container">
-            <h1>{movie.Title}</h1>
+            <h1 className="mb-3">{movie.Title}</h1>
             <div className="movie-card">
                 <div className="top-section">
                     <div className="top-section__poster-container">
@@ -54,14 +54,31 @@ export default function MovieDetail() {
                         <div className="top-section__header">
                             <div className="rated">{movie.Rated}</div>
                             <div className="genre">{movie.Genre}</div>
+                        </div>
+                        <div className="display--flex align-items--center my-4">
+                            <div className="rating mr-3">
+                                <div className="display--flex align-items--center">
+                                    <StarIcon fontSize="small" style={{ color: '#ffca1b', marginRight: 3}} />
+                                    <span>{movie.imdbRating}</span>
+                                </div>
+                                <div className="rating-source">IMDB Rating</div>
+                            </div>
+                            <div className="rating mr-3">
+                                <div className="display--flex align-items--center">
+                                    <div className="margin--auto">{movie.Metascore}</div>
+                                </div>
+                                <div className="rating-source">Metascore</div>
+                            </div>
                             <div className="rating">
-                                <StarIcon fontSize="small" style={{ color: '#ffca1b', marginRight: 3}} />
-                                <span>{movie.imdbRating}</span>
+                                <div className="display--flex align-items--center">
+                                    <div className="margin--auto">{movie.imdbVotes}</div>
+                                </div>
+                                <div className="rating-source">IMDB Votes</div>
                             </div>
                         </div>
                         {/* <p>Released: {movie.Released}</p> */}
-                        <div className="display--flex mt-4">
-                            <div className="content-detail-wrapper mr-5">
+                        <div className="display--flex">
+                            <div className="content-detail-wrapper mr-3">
                                 <label>Director</label>
                                 <p>{movie.Director}</p>
                             </div>                        
@@ -81,7 +98,41 @@ export default function MovieDetail() {
                     </div>
                 </div>
                 <div className="main-section mt-4">
-                    <p className="plot mt-1">{movie.Plot}</p>
+                    <div>
+                        <p className="font-color--yellow font-weight--bold">Sinopsis</p>
+                        <hr className="divider" />
+                        <p className="plot mt-1">{movie.Plot}</p>
+                    </div>
+                    <div>
+                        <div className="display--flex">
+                            <div className="content-detail-wrapper mr-3">
+                                <label>Runtime</label>
+                                <p>{movie.Runtime}</p>
+                            </div> 
+                            <div className="content-detail-wrapper mr-3">
+                                <label>Released</label>
+                                <p>{movie.Released}</p>
+                            </div> 
+                            <div className="content-detail-wrapper">
+                                <label>Box Office</label>
+                                <p>{movie.BoxOffice}</p>
+                            </div>
+                        </div>
+                        <div className="display--flex">
+                            <div className="content-detail-wrapper mr-3">
+                                <label>Language</label>
+                                <p>{movie.Language}</p>
+                            </div> 
+                            <div className="content-detail-wrapper">
+                                <label>Country</label>
+                                <p>{movie.Country}</p>
+                            </div> 
+                        </div>
+                        <div className="content-detail-wrapper">
+                            <label>Production</label>
+                            <p>{movie.Production}</p>
+                        </div> 
+                    </div>
                 </div>
             </div>
 

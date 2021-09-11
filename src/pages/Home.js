@@ -6,6 +6,7 @@ import axios from 'axios';
 import { setDefaultMovies } from '../store/actions/movieAction';
 
 import ModalImage from '../components/ModalImage';
+import Card from '../components/Card';
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -49,15 +50,12 @@ export default function Home() {
                     { 
                         defaultMovies.map((movie) => {
                             return (
-                                <div className="card">
-                                    <div className="top-right-badge">{movie.Year}</div>
-                                    <div className="card-poster-container" >
-                                        <img src={movie.Poster} alt="" />
-                                    </div>
-                                    <Link to={`/movie/${movie.imdbID}`}>
-                                        <p className="card-title">{movie.Title}</p>
-                                    </Link>
-                                </div>
+                                <Card
+                                    Title={movie.Title}
+                                    Poster={movie.Poster}
+                                    Year={movie.Year}
+                                    imdbID={movie.imdbID}
+                                />
                             )
                         })
                     }
