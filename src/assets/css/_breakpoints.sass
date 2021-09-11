@@ -34,5 +34,16 @@ $media-mobile-sm: "only screen and (max-width : 480px)"
 @media #{$media-mobile-sm}
     .container
         width: calc( 100% - 2rem )
-    
+
+    .movie-card .top-section
+        flex-direction: column
+
+    .movie-card .top-section .top-section__poster-container
+        margin-right: auto
+        margin: auto
+        margin-bottom: 2rem
+
+    .movie-card .main-section
+        grid-template-columns: 1fr
+
         

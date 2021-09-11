@@ -726,5 +726,20 @@ a {
   .container {
     width: calc( 100% - 2rem);
   }
+  .movie-card .top-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .movie-card .top-section .top-section__poster-container {
+    margin-right: auto;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+  .movie-card .main-section {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 /*# sourceMappingURL=main.style.css.map */
