@@ -20,3 +20,10 @@ export const setMovieDetailResult = (movie) => {
         payload: movie
     }
 }
+
+export const setKeyword = (movie) => {
+    return {
+        type: ActionTypes.SET_KEYWORD,
+        payload: movie
+    }
+}

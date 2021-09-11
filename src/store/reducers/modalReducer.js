@@ -3,7 +3,7 @@ import { ActionTypes } from '../type'
 const initialState = {
     modal: {
         isModal: false,
-        message: ""
+        poster: ""
     }
 }
 

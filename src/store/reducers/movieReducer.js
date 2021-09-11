@@ -3,7 +3,8 @@ import { ActionTypes } from '../type'
 const initialState = {
    defaultMovies: [],
    movieResult: [],
-   movieDetailResult: ""
+   movieDetailResult: {},
+   keyword: ""
 }
 
 export const movieReducer = (state = initialState, {type, payload}) => {
@@ -25,6 +26,12 @@ export const movieReducer = (state = initialState, {type, payload}) => {
             return {
                 ...state,
                 movieDetailResult: payload
+            }
+
+        case ActionTypes.SET_KEYWORD:
+            return {
+                ...state,
+                keyword: payload
             }
 
         default: 
